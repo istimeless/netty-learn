@@ -14,22 +14,1175 @@ public final class DataInfo {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface MyMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.istimeless.nettylearn.sixthexample.MyMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+     * @return Whether the dataType field is set.
+     */
+    boolean hasDataType();
+    /**
+     * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+     * @return The dataType.
+     */
+    com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType getDataType();
+
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     * @return Whether the student field is set.
+     */
+    boolean hasStudent();
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     * @return The student.
+     */
+    com.istimeless.nettylearn.sixthexample.DataInfo.Student getStudent();
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     */
+    com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder getStudentOrBuilder();
+
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     * @return Whether the person field is set.
+     */
+    boolean hasPerson();
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     * @return The person.
+     */
+    com.istimeless.nettylearn.sixthexample.DataInfo.Person getPerson();
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     */
+    com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder getPersonOrBuilder();
+
+    public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataBodyCase getDataBodyCase();
+  }
+  /**
+   * Protobuf type {@code com.istimeless.nettylearn.sixthexample.MyMessage}
+   */
+  public  static final class MyMessage extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.istimeless.nettylearn.sixthexample.MyMessage)
+      MyMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MyMessage.newBuilder() to construct.
+    private MyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MyMessage() {
+      dataType_ = 1;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MyMessage();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private MyMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
+              com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType value = com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                dataType_ = rawValue;
+              }
+              break;
+            }
+            case 18: {
+              com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder subBuilder = null;
+              if (dataBodyCase_ == 2) {
+                subBuilder = ((com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.istimeless.nettylearn.sixthexample.DataInfo.Student.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 2;
+              break;
+            }
+            case 26: {
+              com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder subBuilder = null;
+              if (dataBodyCase_ == 3) {
+                subBuilder = ((com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_).toBuilder();
+              }
+              dataBody_ =
+                  input.readMessage(com.istimeless.nettylearn.sixthexample.DataInfo.Person.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_);
+                dataBody_ = subBuilder.buildPartial();
+              }
+              dataBodyCase_ = 3;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.class, com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code com.istimeless.nettylearn.sixthexample.MyMessage.DataType}
+     */
+    public enum DataType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>StudentType = 1;</code>
+       */
+      StudentType(1),
+      /**
+       * <code>PersonType = 2;</code>
+       */
+      PersonType(2),
+      ;
+
+      /**
+       * <code>StudentType = 1;</code>
+       */
+      public static final int StudentType_VALUE = 1;
+      /**
+       * <code>PersonType = 2;</code>
+       */
+      public static final int PersonType_VALUE = 2;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DataType forNumber(int value) {
+        switch (value) {
+          case 1: return StudentType;
+          case 2: return PersonType;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DataType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          DataType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataType>() {
+              public DataType findValueByNumber(int number) {
+                return DataType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final DataType[] VALUES = values();
+
+      public static DataType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DataType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:com.istimeless.nettylearn.sixthexample.MyMessage.DataType)
+    }
+
+    private int bitField0_;
+    private int dataBodyCase_ = 0;
+    private java.lang.Object dataBody_;
+    public enum DataBodyCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      STUDENT(2),
+      PERSON(3),
+      DATABODY_NOT_SET(0);
+      private final int value;
+      private DataBodyCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataBodyCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static DataBodyCase forNumber(int value) {
+        switch (value) {
+          case 2: return STUDENT;
+          case 3: return PERSON;
+          case 0: return DATABODY_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DataBodyCase
+    getDataBodyCase() {
+      return DataBodyCase.forNumber(
+          dataBodyCase_);
+    }
+
+    public static final int DATA_TYPE_FIELD_NUMBER = 1;
+    private int dataType_;
+    /**
+     * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+     * @return Whether the dataType field is set.
+     */
+    public boolean hasDataType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+     * @return The dataType.
+     */
+    public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType getDataType() {
+      @SuppressWarnings("deprecation")
+      com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType result = com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType.valueOf(dataType_);
+      return result == null ? com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType.StudentType : result;
+    }
+
+    public static final int STUDENT_FIELD_NUMBER = 2;
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     * @return Whether the student field is set.
+     */
+    public boolean hasStudent() {
+      return dataBodyCase_ == 2;
+    }
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     * @return The student.
+     */
+    public com.istimeless.nettylearn.sixthexample.DataInfo.Student getStudent() {
+      if (dataBodyCase_ == 2) {
+         return (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_;
+      }
+      return com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+     */
+    public com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder getStudentOrBuilder() {
+      if (dataBodyCase_ == 2) {
+         return (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_;
+      }
+      return com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+    }
+
+    public static final int PERSON_FIELD_NUMBER = 3;
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     * @return Whether the person field is set.
+     */
+    public boolean hasPerson() {
+      return dataBodyCase_ == 3;
+    }
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     * @return The person.
+     */
+    public com.istimeless.nettylearn.sixthexample.DataInfo.Person getPerson() {
+      if (dataBodyCase_ == 3) {
+         return (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_;
+      }
+      return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+    }
+    /**
+     * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+     */
+    public com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder getPersonOrBuilder() {
+      if (dataBodyCase_ == 3) {
+         return (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_;
+      }
+      return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasDataType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, dataType_);
+      }
+      if (dataBodyCase_ == 2) {
+        output.writeMessage(2, (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        output.writeMessage(3, (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, dataType_);
+      }
+      if (dataBodyCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_);
+      }
+      if (dataBodyCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage)) {
+        return super.equals(obj);
+      }
+      com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage other = (com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage) obj;
+
+      if (hasDataType() != other.hasDataType()) return false;
+      if (hasDataType()) {
+        if (dataType_ != other.dataType_) return false;
+      }
+      if (!getDataBodyCase().equals(other.getDataBodyCase())) return false;
+      switch (dataBodyCase_) {
+        case 2:
+          if (!getStudent()
+              .equals(other.getStudent())) return false;
+          break;
+        case 3:
+          if (!getPerson()
+              .equals(other.getPerson())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDataType()) {
+        hash = (37 * hash) + DATA_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + dataType_;
+      }
+      switch (dataBodyCase_) {
+        case 2:
+          hash = (37 * hash) + STUDENT_FIELD_NUMBER;
+          hash = (53 * hash) + getStudent().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + PERSON_FIELD_NUMBER;
+          hash = (53 * hash) + getPerson().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.istimeless.nettylearn.sixthexample.MyMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.istimeless.nettylearn.sixthexample.MyMessage)
+        com.istimeless.nettylearn.sixthexample.DataInfo.MyMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.class, com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.Builder.class);
+      }
+
+      // Construct using com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dataType_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage getDefaultInstanceForType() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage build() {
+        com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage buildPartial() {
+        com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage result = new com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.dataType_ = dataType_;
+        if (dataBodyCase_ == 2) {
+          if (studentBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = studentBuilder_.build();
+          }
+        }
+        if (dataBodyCase_ == 3) {
+          if (personBuilder_ == null) {
+            result.dataBody_ = dataBody_;
+          } else {
+            result.dataBody_ = personBuilder_.build();
+          }
+        }
+        result.bitField0_ = to_bitField0_;
+        result.dataBodyCase_ = dataBodyCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage) {
+          return mergeFrom((com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage other) {
+        if (other == com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.getDefaultInstance()) return this;
+        if (other.hasDataType()) {
+          setDataType(other.getDataType());
+        }
+        switch (other.getDataBodyCase()) {
+          case STUDENT: {
+            mergeStudent(other.getStudent());
+            break;
+          }
+          case PERSON: {
+            mergePerson(other.getPerson());
+            break;
+          }
+          case DATABODY_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasDataType()) {
+          return false;
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int dataBodyCase_ = 0;
+      private java.lang.Object dataBody_;
+      public DataBodyCase
+          getDataBodyCase() {
+        return DataBodyCase.forNumber(
+            dataBodyCase_);
+      }
+
+      public Builder clearDataBody() {
+        dataBodyCase_ = 0;
+        dataBody_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dataType_ = 1;
+      /**
+       * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+       * @return Whether the dataType field is set.
+       */
+      public boolean hasDataType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+       * @return The dataType.
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType getDataType() {
+        @SuppressWarnings("deprecation")
+        com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType result = com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType.valueOf(dataType_);
+        return result == null ? com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType.StudentType : result;
+      }
+      /**
+       * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+       * @param value The dataType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataType(com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage.DataType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dataType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .com.istimeless.nettylearn.sixthexample.MyMessage.DataType data_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDataType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataType_ = 1;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.istimeless.nettylearn.sixthexample.DataInfo.Student, com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder> studentBuilder_;
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       * @return Whether the student field is set.
+       */
+      public boolean hasStudent() {
+        return dataBodyCase_ == 2;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       * @return The student.
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Student getStudent() {
+        if (studentBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            return (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_;
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return studentBuilder_.getMessage();
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public Builder setStudent(com.istimeless.nettylearn.sixthexample.DataInfo.Student value) {
+        if (studentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          studentBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public Builder setStudent(
+          com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder builderForValue) {
+        if (studentBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          studentBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public Builder mergeStudent(com.istimeless.nettylearn.sixthexample.DataInfo.Student value) {
+        if (studentBuilder_ == null) {
+          if (dataBodyCase_ == 2 &&
+              dataBody_ != com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance()) {
+            dataBody_ = com.istimeless.nettylearn.sixthexample.DataInfo.Student.newBuilder((com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 2) {
+            studentBuilder_.mergeFrom(value);
+          }
+          studentBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public Builder clearStudent() {
+        if (studentBuilder_ == null) {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 2) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          studentBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder getStudentBuilder() {
+        return getStudentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder getStudentOrBuilder() {
+        if ((dataBodyCase_ == 2) && (studentBuilder_ != null)) {
+          return studentBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 2) {
+            return (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_;
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Student student = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.istimeless.nettylearn.sixthexample.DataInfo.Student, com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder> 
+          getStudentFieldBuilder() {
+        if (studentBuilder_ == null) {
+          if (!(dataBodyCase_ == 2)) {
+            dataBody_ = com.istimeless.nettylearn.sixthexample.DataInfo.Student.getDefaultInstance();
+          }
+          studentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.istimeless.nettylearn.sixthexample.DataInfo.Student, com.istimeless.nettylearn.sixthexample.DataInfo.Student.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.StudentOrBuilder>(
+                  (com.istimeless.nettylearn.sixthexample.DataInfo.Student) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 2;
+        onChanged();;
+        return studentBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.istimeless.nettylearn.sixthexample.DataInfo.Person, com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder> personBuilder_;
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       * @return Whether the person field is set.
+       */
+      public boolean hasPerson() {
+        return dataBodyCase_ == 3;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       * @return The person.
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Person getPerson() {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            return (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_;
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return personBuilder_.getMessage();
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public Builder setPerson(com.istimeless.nettylearn.sixthexample.DataInfo.Person value) {
+        if (personBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dataBody_ = value;
+          onChanged();
+        } else {
+          personBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public Builder setPerson(
+          com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder builderForValue) {
+        if (personBuilder_ == null) {
+          dataBody_ = builderForValue.build();
+          onChanged();
+        } else {
+          personBuilder_.setMessage(builderForValue.build());
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public Builder mergePerson(com.istimeless.nettylearn.sixthexample.DataInfo.Person value) {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 3 &&
+              dataBody_ != com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance()) {
+            dataBody_ = com.istimeless.nettylearn.sixthexample.DataInfo.Person.newBuilder((com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            dataBody_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataBodyCase_ == 3) {
+            personBuilder_.mergeFrom(value);
+          }
+          personBuilder_.setMessage(value);
+        }
+        dataBodyCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public Builder clearPerson() {
+        if (personBuilder_ == null) {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataBodyCase_ == 3) {
+            dataBodyCase_ = 0;
+            dataBody_ = null;
+          }
+          personBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder getPersonBuilder() {
+        return getPersonFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      public com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder getPersonOrBuilder() {
+        if ((dataBodyCase_ == 3) && (personBuilder_ != null)) {
+          return personBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataBodyCase_ == 3) {
+            return (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_;
+          }
+          return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>optional .com.istimeless.nettylearn.sixthexample.Person person = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.istimeless.nettylearn.sixthexample.DataInfo.Person, com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder> 
+          getPersonFieldBuilder() {
+        if (personBuilder_ == null) {
+          if (!(dataBodyCase_ == 3)) {
+            dataBody_ = com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+          }
+          personBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.istimeless.nettylearn.sixthexample.DataInfo.Person, com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder, com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder>(
+                  (com.istimeless.nettylearn.sixthexample.DataInfo.Person) dataBody_,
+                  getParentForChildren(),
+                  isClean());
+          dataBody_ = null;
+        }
+        dataBodyCase_ = 3;
+        onChanged();;
+        return personBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.istimeless.nettylearn.sixthexample.MyMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.istimeless.nettylearn.sixthexample.MyMessage)
+    private static final com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage();
+    }
+
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<MyMessage>
+        PARSER = new com.google.protobuf.AbstractParser<MyMessage>() {
+      @java.lang.Override
+      public MyMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new MyMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<MyMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MyMessage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.istimeless.nettylearn.sixthexample.DataInfo.MyMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface StudentOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.istimeless.nettylearn.sixthexample.Student)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return Whether the name field is set.
      */
     boolean hasName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -164,14 +1317,14 @@ public final class DataInfo {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return Whether the name field is set.
      */
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -189,7 +1342,7 @@ public final class DataInfo {
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -275,10 +1428,6 @@ public final class DataInfo {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -615,9 +1764,6 @@ public final class DataInfo {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasName()) {
-          return false;
-        }
         return true;
       }
 
@@ -643,14 +1789,14 @@ public final class DataInfo {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @return Whether the name field is set.
        */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -668,7 +1814,7 @@ public final class DataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -685,7 +1831,7 @@ public final class DataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -700,7 +1846,7 @@ public final class DataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -710,7 +1856,7 @@ public final class DataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -898,11 +2044,898 @@ public final class DataInfo {
 
   }
 
+  public interface PersonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.istimeless.nettylearn.sixthexample.Person)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
+     */
+    boolean hasAge();
+    /**
+     * <code>optional int32 age = 2;</code>
+     * @return The age.
+     */
+    int getAge();
+
+    /**
+     * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
+     */
+    boolean hasAddress();
+    /**
+     * <code>optional string address = 3;</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <code>optional string address = 3;</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+  }
+  /**
+   * Protobuf type {@code com.istimeless.nettylearn.sixthexample.Person}
+   */
+  public  static final class Person extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.istimeless.nettylearn.sixthexample.Person)
+      PersonOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Person.newBuilder() to construct.
+    private Person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Person() {
+      name_ = "";
+      address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Person();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Person(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              name_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              age_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              address_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_Person_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.istimeless.nettylearn.sixthexample.DataInfo.Person.class, com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
+     */
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 1;</code>
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AGE_FIELD_NUMBER = 2;
+    private int age_;
+    /**
+     * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
+     */
+    public boolean hasAge() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional int32 age = 2;</code>
+     * @return The age.
+     */
+    public int getAge() {
+      return age_;
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object address_;
+    /**
+     * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
+     */
+    public boolean hasAddress() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string address = 3;</code>
+     * @return The address.
+     */
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          address_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string address = 3;</code>
+     * @return The bytes for address.
+     */
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(2, age_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, age_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.istimeless.nettylearn.sixthexample.DataInfo.Person)) {
+        return super.equals(obj);
+      }
+      com.istimeless.nettylearn.sixthexample.DataInfo.Person other = (com.istimeless.nettylearn.sixthexample.DataInfo.Person) obj;
+
+      if (hasName() != other.hasName()) return false;
+      if (hasName()) {
+        if (!getName()
+            .equals(other.getName())) return false;
+      }
+      if (hasAge() != other.hasAge()) return false;
+      if (hasAge()) {
+        if (getAge()
+            != other.getAge()) return false;
+      }
+      if (hasAddress() != other.hasAddress()) return false;
+      if (hasAddress()) {
+        if (!getAddress()
+            .equals(other.getAddress())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasAge()) {
+        hash = (37 * hash) + AGE_FIELD_NUMBER;
+        hash = (53 * hash) + getAge();
+      }
+      if (hasAddress()) {
+        hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getAddress().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.istimeless.nettylearn.sixthexample.DataInfo.Person prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.istimeless.nettylearn.sixthexample.Person}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.istimeless.nettylearn.sixthexample.Person)
+        com.istimeless.nettylearn.sixthexample.DataInfo.PersonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_Person_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.istimeless.nettylearn.sixthexample.DataInfo.Person.class, com.istimeless.nettylearn.sixthexample.DataInfo.Person.Builder.class);
+      }
+
+      // Construct using com.istimeless.nettylearn.sixthexample.DataInfo.Person.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        age_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        address_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor;
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Person getDefaultInstanceForType() {
+        return com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Person build() {
+        com.istimeless.nettylearn.sixthexample.DataInfo.Person result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.istimeless.nettylearn.sixthexample.DataInfo.Person buildPartial() {
+        com.istimeless.nettylearn.sixthexample.DataInfo.Person result = new com.istimeless.nettylearn.sixthexample.DataInfo.Person(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.name_ = name_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.age_ = age_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.address_ = address_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.istimeless.nettylearn.sixthexample.DataInfo.Person) {
+          return mergeFrom((com.istimeless.nettylearn.sixthexample.DataInfo.Person)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.istimeless.nettylearn.sixthexample.DataInfo.Person other) {
+        if (other == com.istimeless.nettylearn.sixthexample.DataInfo.Person.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          bitField0_ |= 0x00000001;
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.hasAge()) {
+          setAge(other.getAge());
+        }
+        if (other.hasAddress()) {
+          bitField0_ |= 0x00000004;
+          address_ = other.address_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.istimeless.nettylearn.sixthexample.DataInfo.Person parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.istimeless.nettylearn.sixthexample.DataInfo.Person) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 1;</code>
+       * @return Whether the name field is set.
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int age_ ;
+      /**
+       * <code>optional int32 age = 2;</code>
+       * @return Whether the age field is set.
+       */
+      public boolean hasAge() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       * @return The age.
+       */
+      public int getAge() {
+        return age_;
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       * @param value The age to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAge(int value) {
+        bitField0_ |= 0x00000002;
+        age_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 age = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAge() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        age_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>optional string address = 3;</code>
+       * @return Whether the address field is set.
+       */
+      public boolean hasAddress() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional string address = 3;</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            address_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string address = 3;</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string address = 3;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string address = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string address = 3;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.istimeless.nettylearn.sixthexample.Person)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.istimeless.nettylearn.sixthexample.Person)
+    private static final com.istimeless.nettylearn.sixthexample.DataInfo.Person DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.istimeless.nettylearn.sixthexample.DataInfo.Person();
+    }
+
+    public static com.istimeless.nettylearn.sixthexample.DataInfo.Person getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Person>
+        PARSER = new com.google.protobuf.AbstractParser<Person>() {
+      @java.lang.Override
+      public Person parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Person(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Person> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Person> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.istimeless.nettylearn.sixthexample.DataInfo.Person getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_istimeless_nettylearn_sixthexample_Student_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_istimeless_nettylearn_sixthexample_Student_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_istimeless_nettylearn_sixthexample_Person_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -913,20 +2946,40 @@ public final class DataInfo {
   static {
     java.lang.String[] descriptorData = {
       "\n\032src/protobuf/Student.proto\022&com.istime" +
-      "less.nettylearn.sixthexample\"5\n\007Student\022" +
-      "\014\n\004name\030\001 \002(\t\022\013\n\003age\030\002 \001(\005\022\017\n\007address\030\003 " +
-      "\001(\tB4\n&com.istimeless.nettylearn.sixthex" +
-      "ampleB\010DataInfoH\001"
+      "less.nettylearn.sixthexample\"\231\002\n\tMyMessa" +
+      "ge\022M\n\tdata_type\030\001 \002(\0162:.com.istimeless.n" +
+      "ettylearn.sixthexample.MyMessage.DataTyp" +
+      "e\022B\n\007student\030\002 \001(\0132/.com.istimeless.nett" +
+      "ylearn.sixthexample.StudentH\000\022@\n\006person\030" +
+      "\003 \001(\0132..com.istimeless.nettylearn.sixthe" +
+      "xample.PersonH\000\"+\n\010DataType\022\017\n\013StudentTy" +
+      "pe\020\001\022\016\n\nPersonType\020\002B\n\n\010dataBody\"5\n\007Stud" +
+      "ent\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\017\n\007addres" +
+      "s\030\003 \001(\t\"4\n\006Person\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002" +
+      " \001(\005\022\017\n\007address\030\003 \001(\tB4\n&com.istimeless." +
+      "nettylearn.sixthexampleB\010DataInfoH\001"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_com_istimeless_nettylearn_sixthexample_Student_descriptor =
+    internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_istimeless_nettylearn_sixthexample_MyMessage_descriptor,
+        new java.lang.String[] { "DataType", "Student", "Person", "DataBody", });
+    internal_static_com_istimeless_nettylearn_sixthexample_Student_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_com_istimeless_nettylearn_sixthexample_Student_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_istimeless_nettylearn_sixthexample_Student_descriptor,
+        new java.lang.String[] { "Name", "Age", "Address", });
+    internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_istimeless_nettylearn_sixthexample_Person_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_istimeless_nettylearn_sixthexample_Person_descriptor,
         new java.lang.String[] { "Name", "Age", "Address", });
   }
 
